@@ -22,7 +22,7 @@
       },
       data(){
           return {  
-
+            i: 1
            }    
         },
         mounted: function () {

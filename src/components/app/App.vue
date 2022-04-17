@@ -1,7 +1,10 @@
 <template>
-  <div class="todo-app">
-    <h3>Задания: {{message}}</h3>
-    <input type="text" v-model="rezolveMessage">
+  <div class="content">
+    <h1>Шашлычный калькулятор</h1>
+    <div class="culc-item">
+      <human-count />
+      <amount-kebab />
+    </div>
   </div>
   <!-- Теперь можно собрать наше приложение командой npm run build либо запустить слежение за файлами при изменении командой npm run watch. -->
 </template>
@@ -9,43 +12,22 @@
 <style lang="scss" src="./App.scss"></style>
 
 <script>
+    import HumanCount from "../human-count/human-count.vue";
+    import AmountKebab from "../amount-kebab/amount-kebab.vue";
     export default {
         name: 'App',
-        data(){
-          message:'asdasd'
-          // rezolveMessage == message
+      components: {
+        AmountKebab,
+        HumanCount
+      },
+      data(){
           return {  
-            // message,
-            rezolveMessage,
+
            }    
         },
         mounted: function () {
           // console.log(this);
         },
-        // computed:{
-        //   message: function(val){
-        //     if(this.rezolveMessage.lendth > 0){
-        //     //  this.message == val;
-        //      return val
-        //     }
-        //   }
-        // },
-        computed: {
-          message: {
-            // геттер:
-            get: function () {
-              return this.rezolveMessage
-            },
-            // сеттер:
-            set: function (newValue) {
-              if(newValue.length > 0){
-              var names = newValue.split(' ')
-              this.message = names[0]
-              }
-              
-            }
-          }
-        }
     }
 </script>
 

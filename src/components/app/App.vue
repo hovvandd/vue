@@ -2,7 +2,9 @@
   <div class="content">
     <h1>Шашлычный калькулятор</h1>
     <div class="culc-item">
-      <human-count />
+      <human-count
+          v-model.number="parent.parentData"
+      />
       <amount-kebab />
     </div>
   </div>
@@ -21,13 +23,15 @@
         HumanCount
       },
       data(){
-          return {  
-            i: 1
+          return {
+            parent: {
+              parentData: '',
+            }
            }    
         },
-        mounted: function () {
-          // console.log(this);
-        },
+        // mounted: function () {
+        //   console.log(this);
+        // }
     }
 </script>
 

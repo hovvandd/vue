@@ -1,11 +1,12 @@
 <template>
   <div class="amount-kebab">
     <div>
-      количество шашлыка
+      <button>Рассчитать</button>
+      <p>10.2 kg</p>
     </div>
   </div>
 </template>
-
+<style lang="scss" src="./amount-kebab.scss"></style>
 
 <script>
 export default {

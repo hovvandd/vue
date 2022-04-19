@@ -21,12 +21,13 @@
 
 
 <script>
+import {eventBus} from '../../index';
 export default {
   name: 'human-count',
   data(){
     return {
-      adult: '',
-      kid: '',
+      adult: false,
+      kid: false,
 
     }
   },
@@ -36,9 +37,9 @@ export default {
   computed:{
     sumHuman: function () {
       if(this.adult.length > 0){
-        let sum = Number(this.adult * 2) + Number(this.kid)
-        this.$emit('input', sum)
-        return sum
+        let sumHuman = Number(this.adult * 2) + Number(this.kid)
+        eventBus.$emit('sumHuman', sumHuman)
+        return sumHuman
       }
     }
   }

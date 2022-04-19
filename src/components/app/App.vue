@@ -2,9 +2,7 @@
   <div class="content">
     <h1>Шашлычный калькулятор</h1>
     <div class="culc-item">
-      <human-count
-          v-model.number="parent.parentData"
-      />
+      <human-count />
       <amount-kebab />
     </div>
   </div>
@@ -17,21 +15,19 @@
     import HumanCount from "../human-count/human-count.vue";
     import AmountKebab from "../amount-kebab/amount-kebab.vue";
     export default {
-        name: 'App',
+      name: 'App',
       components: {
         AmountKebab,
         HumanCount
       },
-      data(){
-          return {
-            parent: {
-              parentData: '',
-            }
-           }    
-        },
+      data() {
+        return {
+        }
+      },
         // mounted: function () {
         //   console.log(this);
         // }
+
     }
 </script>
 
